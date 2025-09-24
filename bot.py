@@ -141,7 +141,9 @@ def main(page: ft.Page):
 import discord
 from discord.ext import commands
 TOKEN = os.getenv("DISCORD_TOKEN")  # Use environment variable named DISCORD_TOKEN
-bot = commands.Bot(command_prefix="!")
+intents = discord.Intents.default()
+intents.message_content = True  # Enable if you want to read message content
+bot = commands.Bot(command_prefix="!", intents=intents)
 bot.run(TOKEN)
 
 # For Flet app (web UI):
