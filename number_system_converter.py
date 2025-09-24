@@ -4,7 +4,7 @@ import flet as ft
 def main(page: ft.Page):
     page.title = "Number Converter"
     page.padding = 20
-    page.theme_mode = ft.ThemeMode.DARK
+    page.theme_mode = ft.ThemeMode.LIGHT
 
     # Input field - CORRECTED syntax
     number_input = ft.TextField(
@@ -137,4 +137,5 @@ def main(page: ft.Page):
 
 # Run the app
 if __name__ == "__main__":
+
     ft.app(target=main, view=ft.AppView.WEB_BROWSER, port=5000)
