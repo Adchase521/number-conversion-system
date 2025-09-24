@@ -1,10 +1,11 @@
+import os
 import flet as ft
 
 
 def main(page: ft.Page):
     page.title = "Number Converter"
     page.padding = 20
-    page.theme_mode = ft.ThemeMode.LIGHT
+    page.theme_mode = ft.ThemeMode.DARK
 
     # Input field - CORRECTED syntax
     number_input = ft.TextField(
@@ -135,7 +136,14 @@ def main(page: ft.Page):
     )
 
 
-# Run the app
-if __name__ == "__main__":
+# For Discord bot hosting, use environment variable for token
+# Example usage for Discord bot:
+import discord
+from discord.ext import commands
+TOKEN = os.getenv("DISCORD_TOKEN")  # Use environment variable named DISCORD_TOKEN
+bot = commands.Bot(command_prefix="!")
+bot.run(TOKEN)
 
+# For Flet app (web UI):
+if __name__ == "__main__":
     ft.app(target=main, view=ft.AppView.WEB_BROWSER, port=5000)
